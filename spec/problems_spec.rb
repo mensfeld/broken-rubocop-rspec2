@@ -3,4 +3,11 @@
 RSpec.describe CommitBuildsCopyWorker do
   specify { expect(described_class).to be < KarafkaWorker }
   specify { expect(described_class.sidekiq_options['queue']).to eq 'low' }
+
+  before { a }
+
+  let(:b) {  }
+
+  context 'tadam' do
+  end
 end

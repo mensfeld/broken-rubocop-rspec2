@@ -1,0 +1,30 @@
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - .gemspec/**/*
+    - .bundle/**/*
+    - vendor/**/*
+    - '**/dummy**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+    - lib/**/*.rb
+    - lib/**/*.rake
+    - lib/**/*.cap
+
+RSpec/FilePath:
+  CustomTransform:
+    RuboCop: rubo_cop
+    Rspec: r_spec
+
+RSpec/MultipleExpectations:
+  Enabled: true
+  Max: 3
+
+RSpec/NestedGroups:
+  Enabled: true
+  Max: 4
